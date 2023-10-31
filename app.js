@@ -83,6 +83,17 @@ new Vue({
                 console.log("Errore: Impossibile eliminare i task non contrassegnati come 'Fatto'.");
             }
         },
+        markAllTasksDone() {
+            // Contrassegna tutti i task come 'Fatto'
+            this.tasks.forEach(task => {
+                task.completed = true;
+            });
+
+            // Salva i dati
+            this.saveTasks();
+            // Visualizza il messaggio di conferma
+            console.log("Tutti i task contrassegnati come 'Fatto':", this.tasks);
+        },
     },
     mounted() {
         // Carica i dati da api.php
