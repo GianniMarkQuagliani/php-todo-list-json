@@ -38,14 +38,9 @@
         <div class="mb-4">
             <!-- Input Group -->
             <div class="input-group">
-                <input 
-                type="text" 
-                class="form-control"
-                >
+                <input type="text" class="form-control" v-model="newTask" @keyup.enter="addTask">
                 <!-- Button Add -->
-                <button 
-                class="btn btn-primary"
-                >Aggiungi</button>
+                <button class="btn btn-primary" @click="addTask">Aggiungi</button>
             </div>
             <!-- Button Delete -->
             <button 

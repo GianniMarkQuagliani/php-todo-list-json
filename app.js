@@ -5,7 +5,14 @@ new Vue({
 
     },
     methods: {
-        
+        addTask() {
+            if (this.newTask.trim() !== '') {
+                this.tasks.push({ text: this.newTask, completed: false });
+                this.newTask = '';
+                this.saveTasks();
+                console.log("Aggiunto un nuovo task:", this.tasks);
+            }
+        },
     },
     mounted() {
         // Carica i dati da api.php

@@ -25,3 +25,7 @@ Questo file gestisce le richieste HTTP tra il frontend (applicazione Vue.js) e i
 Questo è il file principale dell'applicazione Vue.js. Qui creo un'applicazione Vue che gestisce l'interfaccia utente e le azioni degli utenti.
 
 - mounted(): Alla creazione dell'applicazione, viene effettuata una richiesta GET al server per recuperare i dati delle attività esistenti e popolare l'elenco delle attività. Vengono registrati anche messaggi di log per feedback.
+
+- saveTasks(): Effettua una richiesta POST al server (api.php) per salvare i dati delle attività. Registra anche messaggi di log per feedback.
+
+- addTask(): Aggiunge una nuova attività all'elenco delle attività solo se il campo di input non è vuoto. Dopodiché, reimposta il campo di input e chiama saveTasks() per salvare i dati.
