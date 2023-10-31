@@ -36,3 +36,4 @@ Questo è il file principale dell'applicazione Vue.js. Qui creo un'applicazione 
 
 - deleteTask(index): Elimina un'attività solo se è contrassegnata come "Fatta". Altrimenti, mostra un messaggio di errore. Chiama saveTasks() per salvare i dati dopo l'eliminazione.
 
+- deleteAllTasks(): Elimina tutte le attività solo se tutte sono contrassegnate come "Fatte". Altrimenti, mostra un messaggio di errore. Chiama saveTasks() per salvare i dati dopo l'eliminazione.

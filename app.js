@@ -64,6 +64,25 @@ new Vue({
                 console.log("Errore: Impossibile eliminare il task non contrassegnato.");
             }
         },
+        deleteAllTasks() {
+            // Elimina tutti i task
+            const uncompletedTasks = this.tasks.filter(task => !task.completed);
+
+            // Elimina i task non contrassegnati come 'Fatto'
+            if (uncompletedTasks.length === 0) {
+                this.tasks = [];
+
+                // Salva i dati
+                this.saveTasks();
+                // Visualizza il messaggio di conferma
+                console.log("Eliminati tutti i task:", this.tasks);
+            } else {
+                // Visualizza l'errore
+                alert("Errore: Completa tutti i task prima di eliminarli.");
+                // Visualizza il messaggio di conferma
+                console.log("Errore: Impossibile eliminare i task non contrassegnati come 'Fatto'.");
+            }
+        },
     },
     mounted() {
         // Carica i dati da api.php
