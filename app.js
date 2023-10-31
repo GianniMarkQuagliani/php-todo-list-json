@@ -6,12 +6,26 @@ new Vue({
     },
     methods: {
         addTask() {
+            // Aggiungi un nuovo task
             if (this.newTask.trim() !== '') {
+                // Aggiungi il nuovo task
                 this.tasks.push({ text: this.newTask, completed: false });
                 this.newTask = '';
+
+                // Salva i dati
                 this.saveTasks();
+                // Visualizza il messaggio di conferma
                 console.log("Aggiunto un nuovo task:", this.tasks);
             }
+        },
+        toggleTask(index, completed) {
+            // Cambia lo stato del task
+            this.tasks[index].completed = completed;
+
+            // Salva i dati
+            this.saveTasks();
+            // Visualizza il messaggio di conferma
+            console.log("Stato del task cambiato:", this.tasks[index]);
         },
     },
     mounted() {

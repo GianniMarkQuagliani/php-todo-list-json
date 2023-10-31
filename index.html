@@ -43,26 +43,21 @@
                 <button class="btn btn-primary" @click="addTask">Aggiungi</button>
             </div>
             <!-- Button Delete -->
-            <button 
-            class="btn btn-danger mt-2"
-            >Elimina tutti i task</button>
+            <button class="btn btn-danger mt-2">Elimina tutti i task</button>
             <!-- Button Done -->
-            <button 
-            class="btn btn-success mt-2" 
-            >Contrassegna come fatto tutto</button>
+            <button class="btn btn-success mt-2">Contrassegna come fatto tutto</button>
         </div>
 
         <!-- List Group -->
         <ul class="list-group">
             <!-- List Group Item -->
 
-            <li 
-            class="list-group-item">
+            <li class="list-group-item" v-for="(task, index) in tasks" :key="index">
 
                 <!-- Task -->
                 <div class="d-flex justify-content-between align-items-center">
                     <!-- Task Text -->
-                    <span>Task</span>
+                    <span @click="toggleTask(index, !task.completed)" :class="{ 'completed': task.completed }">{{ task.text }}</span>
                     <!-- Button Done -->
                     <button class="btn btn-success">Fatto</button>
                     <!-- Button Delete -->
