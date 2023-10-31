@@ -59,7 +59,7 @@
                     <!-- Task Text -->
                     <span @click="toggleTask(index, !task.completed)" :class="{ 'completed': task.completed }">{{ task.text }}</span>
                     <!-- Button Done -->
-                    <button class="btn btn-success">Fatto</button>
+                    <button class="btn btn-success" @click="markTaskDone(index)">Fatto</button>
                     <!-- Button Delete -->
                     <button class="btn btn-danger">Elimina</button>
                 </div>

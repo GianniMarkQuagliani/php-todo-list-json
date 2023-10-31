@@ -27,6 +27,15 @@ new Vue({
             // Visualizza il messaggio di conferma
             console.log("Stato del task cambiato:", this.tasks[index]);
         },
+        markTaskDone(index) {
+            // Cambia lo stato del task
+            this.tasks[index].completed = !this.tasks[index].completed;
+            
+            // Salva i dati
+            this.saveTasks();
+            // Visualizza il messaggio di conferma
+            console.log("Task contrassegnato come 'Fatto':", this.tasks[index]);
+        },
     },
     mounted() {
         // Carica i dati da api.php
