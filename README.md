@@ -34,3 +34,5 @@ Questo è il file principale dell'applicazione Vue.js. Qui creo un'applicazione 
 
 - markTaskDone(index): Contrassegna un'attività come "Fatta" o "Non Fatta" quando l'utente fa clic su di essa. Poi chiama saveTasks() per salvare i dati.
 
+- deleteTask(index): Elimina un'attività solo se è contrassegnata come "Fatta". Altrimenti, mostra un messaggio di errore. Chiama saveTasks() per salvare i dati dopo l'eliminazione.
+

@@ -30,7 +30,7 @@ new Vue({
         markTaskDone(index) {
             // Cambia lo stato del task
             this.tasks[index].completed = !this.tasks[index].completed;
-            
+
             // Salva i dati
             this.saveTasks();
             // Visualizza il messaggio di conferma
@@ -47,6 +47,22 @@ new Vue({
                     // Gestisce gli errori se necessario
                     console.error("Errore nel salvataggio dei dati:", error);
                 });
+        },
+        deleteTask(index) {
+            if (this.tasks[index].completed) {
+                // Elimina il task
+                this.tasks.splice(index, 1);
+
+                // Salva i dati
+                this.saveTasks();
+                // Visualizza il messaggio di conferma
+                console.log("Task eliminato:", this.tasks);
+            } else {
+                // Visualizza l'errore
+                alert("Errore: Segna il task come 'Fatto' prima di eliminarlo.");
+                // Visualizza il messaggio di conferma
+                console.log("Errore: Impossibile eliminare il task non contrassegnato.");
+            }
         },
     },
     mounted() {
