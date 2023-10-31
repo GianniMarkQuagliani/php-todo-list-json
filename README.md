@@ -29,3 +29,8 @@ Questo è il file principale dell'applicazione Vue.js. Qui creo un'applicazione 
 - saveTasks(): Effettua una richiesta POST al server (api.php) per salvare i dati delle attività. Registra anche messaggi di log per feedback.
 
 - addTask(): Aggiunge una nuova attività all'elenco delle attività solo se il campo di input non è vuoto. Dopodiché, reimposta il campo di input e chiama saveTasks() per salvare i dati.
+
+- toggleTask(index, completed): Cambia lo stato di completamento di un'attività quando l'utente fa clic su di essa. Quindi chiama saveTasks() per salvare i dati.
+
+- markTaskDone(index): Contrassegna un'attività come "Fatta" o "Non Fatta" quando l'utente fa clic su di essa. Poi chiama saveTasks() per salvare i dati.
+

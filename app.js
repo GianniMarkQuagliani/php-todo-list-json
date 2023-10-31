@@ -1,8 +1,8 @@
-// app.js
 new Vue({
     el: '#app',
     data: {
-
+        newTask: '',
+        tasks: [],
     },
     methods: {
         addTask() {
@@ -35,6 +35,18 @@ new Vue({
             this.saveTasks();
             // Visualizza il messaggio di conferma
             console.log("Task contrassegnato come 'Fatto':", this.tasks[index]);
+        },
+        saveTasks() {
+            // Salva i dati
+            axios.post('api.php', { tasks: this.tasks })
+                .then(response => {
+                    // Gestisce la risposta se necessario
+                    console.log("Dati salvati con successo:", response.data);
+                })
+                .catch(error => {
+                    // Gestisce gli errori se necessario
+                    console.error("Errore nel salvataggio dei dati:", error);
+                });
         },
     },
     mounted() {
