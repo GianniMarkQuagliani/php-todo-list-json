@@ -1,8 +1,11 @@
-new Vue({
-    el: '#app',
-    data: {
-        newTask: '',
-        tasks: [],
+const { createApp, ref } = Vue;
+
+const app = createApp({
+    data() {
+        return {
+            newTask: '',
+            tasks: [],
+        };
     },
     methods: {
         addTask() {
@@ -114,3 +117,4 @@ new Vue({
             });
     },
 });
+app.mount('#app');
